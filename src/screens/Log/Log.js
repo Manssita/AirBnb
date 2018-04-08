@@ -8,9 +8,11 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  TextInput
-  // Platform
+  TextInput,
+  StatusBar
 } from "react-native";
+
+import { styles } from "../Log/styles";
 
 export default class Log extends React.Component {
   static navigationOptions = {
@@ -27,6 +29,7 @@ export default class Log extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={[styles.container, styles.style]}>
+        <StatusBar barStyle="light-content" />
         <View style={[styles.home, styles.align]}>
           <Image
             style={styles.homeVisual}
@@ -36,15 +39,7 @@ export default class Log extends React.Component {
           />
         </View>
         <View style={[styles.home, styles.align]}>
-          <Text
-            style={[
-              styles.white,
-              styles.title
-              // { marginTop: Platform.OS === "android" ? 200 : 50 }
-            ]}
-          >
-            Welcome
-          </Text>
+          <Text style={[styles.white, styles.title]}>Welcome</Text>
         </View>
         <View style={[styles.form, styles.align]}>
           <TextInput
@@ -87,49 +82,3 @@ export default class Log extends React.Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#FC5C63"
-  },
-  style: {
-    flex: 1
-  },
-  homeVisual: {
-    width: 100,
-    height: 100
-  },
-  align: {
-    alignItems: "center"
-  },
-  home: {
-    marginTop: 60
-  },
-  form: {
-    marginTop: 30
-  },
-  white: {
-    color: "#ffffff"
-  },
-  title: {
-    fontSize: 45
-  },
-  login: {
-    backgroundColor: "#ffffff",
-    width: 130,
-    height: 50,
-    borderRadius: 55
-  },
-  loginIn: {
-    color: "#FC5C63",
-    fontSize: 25,
-    marginTop: 8
-  },
-  input: {
-    borderBottomWidth: 1,
-    borderColor: "#ffffff",
-    marginBottom: 20,
-    color: "#FFFFFF",
-    height: 50,
-    width: 300
-  }
-});
