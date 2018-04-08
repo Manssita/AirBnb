@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
   },
   price: {
     padding: 20,
-    backgroundColor: "#000",
+    backgroundColor: "#000000",
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
